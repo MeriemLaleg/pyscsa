@@ -1,10 +1,10 @@
 site_name: PySCSA
 site_description: Semi-Classical Signal Analysis for Python
 site_author: boost inria
-site_url: https://bakimane.github.io/pyscsa/
+site_url: https://boost-inria.github.io/pyscsa/
 
-repo_name: bakimane/pyscsa
-repo_url: https://github.com/bakimane/pyscsa
+repo_name: boost-inria/pyscsa
+repo_url: https://github.com/boost-inria/pyscsa
 docs_dir: mkdocs
 theme:
   name: material
