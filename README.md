@@ -2,7 +2,7 @@
 
 [![PyPI version](https://badge.fury.io/py/pyscsa.svg)](https://badge.fury.io/py/pyscsa)
 [![Documentation Status](https://readthedocs.org/projects/pyscsa/badge/?version=latest)](https://pyscsa.readthedocs.io/en/latest/?badge=latest)
-[![Tests](https://github.com/abdou1579/pyscsa/actions/workflows/tests.yml/badge.svg)](https://github.com/abdou1579/pyscsa/actions)
+[![Tests](https://github.com/boost-inria/pyscsa/actions/workflows/tests.yml/badge.svg)](https://github.com/boost-inria/pyscsa/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 A Python library for signal and image processing using Semi-Classical Signal Analysis (SCSA).
@@ -27,7 +27,7 @@ pip install pyscsa
 ### From source
 
 ```bash
-git clone https://github.com/abdou1579/pyscsa.git
+git clone https://github.com/boost-inria/pyscsa.git
 cd pyscsa
 pip install -e .
 ```
@@ -100,7 +100,7 @@ If you use this library in your research, please cite:
   title = {PySCSA: Python Semi-Classical Signal Analysis Library},
   author = {boost inria},
   year = {2025},
-  url = {https://github.com/abdou1579/pyscsa}
+  url = {https://github.com/boost-inria/pyscsa}
 }
 ```
 
