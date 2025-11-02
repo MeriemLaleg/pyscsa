@@ -95,7 +95,7 @@ def main():
             
             # SCSA
             scsa = SCSA1D(gmma=0.5)
-            scsa_result = scsa.filter_with_optimal_h(np.abs(noisy))
+            scsa_result = scsa.filter_with_optimal_h(noisy)
             scsa_denoised = scsa_result.reconstructed * np.sign(clean_signal[0])
             
             # Median filter
