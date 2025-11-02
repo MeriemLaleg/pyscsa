@@ -164,27 +164,28 @@ def main():
             ax.set_title(f'SCSA (PSNR={all_results[signal_name][snr]["SCSA"]["psnr"]:.1f}dB)')
             ax.legend()
             ax.grid(True, alpha=0.3)
-            
+
             # Best alternative method
             best_method = None
             best_psnr = -np.inf
-            for method in ['Median', 'Gaussian', 'Savitzky-Golay', 'Wavelet']:
-                if all_results[signal_name][snr][method]['psnr'] > best_psnr:
-                    best_psnr = all_results[signal_name][snr][method]['psnr']
-                    best_method = method
+            for method in ['Median', 'Gaussian', 'Savitzky-Golay', 'Wavelet', 'Moving Avg']:
+                if method in all_results[signal_name][snr]:  # Check if method exists
+                    method_psnr = all_results[signal_name][snr][method]['psnr']
+                    if method_psnr > best_psnr:
+                        best_psnr = method_psnr
+                        best_method = method
             
             ax = axes[idx, 2]
-            best_signal = all_results[signal_name][snr][best_method]['signal']
-            ax.plot(x, test_signals[signal_name], 'k-', linewidth=2, label='Original')
-            ax.plot(x, best_signal, 'g-', linewidth=1.5, label=best_method)
-            ax.set_title(f'{best_method} (PSNR={best_psnr:.1f}dB)')
-            ax.legend()
+            if best_method is not None:  # Only plot if we found a valid method
+                best_signal = all_results[signal_name][snr][best_method]['signal']
+                ax.plot(x, test_signals[signal_name], 'k-', linewidth=2, label='Original')
+                ax.plot(x, best_signal, 'g-', linewidth=1.5, label=best_method)
+                ax.set_title(f'{best_method} (PSNR={best_psnr:.1f}dB)')
+                ax.legend()
+            else:  # Fallback: just show the original signal
+                ax.plot(x, test_signals[signal_name], 'k-', linewidth=2, label='Original')
+                ax.set_title('No comparison method available')
             ax.grid(True, alpha=0.3)
-            
-            if idx == 2:
-                axes[idx, 0].set_xlabel('Position')
-                axes[idx, 1].set_xlabel('Position')
-                axes[idx, 2].set_xlabel('Position')
         
         plt.tight_layout()
         plt.show()
