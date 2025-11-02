@@ -4,7 +4,7 @@ Examples
 Advanced 1D Signal Processing
 ------------------------------
 
-Parameter Sweep Analysis
+Parameter Analysis
 ~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: python
@@ -39,10 +39,10 @@ Parameter Sweep Analysis
    axes[1].set_ylabel('PSNR (dB)')
    plt.show()
 
-Advanced 2D Image Processing
+2D Image Processing
 -----------------------------
 
-Large Image Processing
+Image Processing
 ~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: python
