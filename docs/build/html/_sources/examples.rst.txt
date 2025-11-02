@@ -1,7 +1,7 @@
 Examples
 ========
 
-Advanced 1D Signal Processing
+1D Signal Processing
 ------------------------------
 
 Parameter Analysis
